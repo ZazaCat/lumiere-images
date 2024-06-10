@@ -25,7 +25,24 @@ DEEPINFRA_HEADERS = {
     "sec-ch-ua-platform": "Android"
 }
 
-st.title("AI Image Generator")
+# Streamlit page config
+st.set_page_config(
+    page_title="Lumiere",
+    page_icon="🖼️",
+    layout="centered",
+)
+
+# Hide main menu and footer
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+    """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+st.title("Lumiere")
 
 # Session state to maintain data
 if 'model' not in st.session_state:
